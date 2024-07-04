@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* 更改进度条颜色 */
+#nprogress .bar {
+  background: #D09F5D !important;
+  height: 2px !important;
+}
+/* fade-transform */
+.fade-transform--move,
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all 0.5s;
+}
+
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
+/* 弹性布局 */
+.flex {
+  display: flex;
+}
+/* 左右对其 */
+.space-between {
+  justify-content: space-between;
+}
+/* 居中对齐 */
+.align-items-center {
+  align-items: center;
+}
+/* 左右内边距 */
+.prl1 {
+  padding: 0 10px;
+}
+.prl2 {
+  padding: 0 20px;
+}
+.prl3 {
+  padding: 0 30px;
+}
+/* 左右外边距 */
+.mrl1 {
+  margin: 0 10px;
+}
+.mrl2 {
+  margin: 0 20px;
+}
+.mrl3 {
+  margin: 0 30px;
+}
+/* 上下外边距 */
+.mtb1 {
+  margin: 10px 0;
+}
+.mtb2 {
+  margin: 20px 0;
+}
+.mtb3 {
+  margin: 30px 0;
+}
+/* 内边距 */
+.p1 {
+  padding: 10px;
+}
+.p2 {
+  padding: 20px;
+}
+.p3 {
+  padding: 30px;
+}
+/* 是否改变鼠标样式 */
+.cursor-pointer {
+  cursor: pointer;
+}
+.scrollBar::-webkit-scrollbar-track-piece {
+  background: #d3dce6;
+}
+
+.scrollBar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollBar::-webkit-scrollbar-thumb {
+  background: #99a9bf;
+  border-radius: 20px;
+}

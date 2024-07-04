@@ -1,0 +1,337 @@
+@font-face {
+  font-family: "PangMenZhengDaoBiaoTiTiMianFeiBan"; // 已改但是还未确认名称是否与设计图上的名称一致
+  src: url('../assets/textfont/PangMenZhengDaoBiaoTiTiMianFeiBan.ttf');
+}
+@font-face {
+  font-family: "Alibaba_PuHuiTi_20_55_Regular_85_Bold"; // 已改但是还未确认名称是否与设计图上的名称一致
+  src: url('../assets/textfont/Alibaba_PuHuiTi_2.0_55_Regular_85_Bold.ttf');
+}
+@font-face {
+  font-family: "Alibaba_PuHuiTi_20_75_SemiBold_75_SemiBold"; // 已改但是还未确认名称是否与设计图上的名称一致
+  src: url('../assets/textfont/Alibaba_PuHuiTi_2.0_75_SemiBold_75_SemiBold.ttf');
+}
+@font-face {
+  font-family: "douyuzhuiguangti"; // 已改但是还未确认名称是否与设计图上的名称一致
+  src: url('../assets/textfont/douyuzhuiguangti.ttf');
+}
+
+body {
+  height: 100%;
+  width: 100% !important;
+  overflow: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+// main-container global css
+.app-container {
+  padding: 20px;
+}
+
+.container {
+  width: 1200px;
+}
+
+/*  大屏公用大盒子样式  */
+
+// 主体左边大盒子
+.big-box-left-style {
+  width: 500px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 86px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  background: linear-gradient(270deg,
+    rgba(2, 7, 23, 0.1) 0%,
+    //rgba(2, 7, 23, 0.58) 39%,
+    #00020c 100%);
+}
+
+// 主体中间地图大盒子
+.big-box-map-style {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+// 主体右边大盒子
+.big-box-right-style {
+  width: 500px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 86px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  background: linear-gradient(90deg,
+    rgba(3, 15, 47, 0) 0%,
+    //rgba(2, 7, 23, 0.58) 39%,
+    #00020c 100%);
+  //z-index: 0;
+}
+
+/*  大屏公用大盒子的单个子盒子样式  */
+
+.box-style {
+  flex: 1;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.93vh;
+  position: relative;
+
+  // 单个盒子的头部样式
+  .box-title {
+    height: 43px;
+    min-height: 43px;
+    width: 100%;
+    background: url('../assets/img/vis/box-title-bg.png') no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+
+    .box-title-text {
+      margin-left: 47px;
+      font-size: 20px;
+      font-family: AlibabaPuHuiTi_2_85_Bold;
+      color: #FFFFFF;
+      background: linear-gradient(180deg, #FFFFFF 0%, #6BCEFF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    // tab按钮样式
+    .box-tabs {
+      display: flex;
+
+      .box-tabs-item {
+        height: 24px;
+        cursor: pointer;
+        min-width: 60px;
+        padding: 0 5px;
+        background: url('../assets/img/vis/box-tabs-item-bg.png') no-repeat;
+        background-size: 100% 100%;
+        margin-left: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-family: AlibabaPuHuiTi_2_75_SemiBold;
+        color: #BCDDED;
+
+        &:hover {
+          background: url('../assets/img/vis/box-tabs-item-active-bg.png') no-repeat;
+          background-size: 100% 100%;
+          color: #FFFFF4;
+        }
+
+        &:nth-of-type(1) {
+          margin-left: 0;
+        }
+      }
+    }
+
+    // tabs按钮选中效果
+    .box-tabs-item-active {
+      background: url('../assets/img/vis/box-tabs-item-active-bg.png') no-repeat !important;
+      background-size: 100% 100% !important;
+      color: #FFFFF4 !important;
+    }
+  }
+
+  // 单个盒子的主体样式
+  .box-main {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    background: url('../assets/img/vis/box-main-bg.png') no-repeat;
+    background-size: 100% 140%;
+    background-position-y: 20%;
+    // 单个盒子的主体上面的线
+    &:before {
+      position: absolute;
+      top: 38.5px;
+      width: 100%;
+      left: 0;
+      height: 5px;
+      display: inline-block;
+      content: '';
+      background: url('../assets/img/vis/box-main-line.png') no-repeat;
+      background-size: 100% auto;
+    }
+  }
+}
+
+// 去掉小盒子下边距的样式
+.clear-margin-bottom {
+  margin-bottom: 0;
+}
+
+/*  大屏弹窗公用样式   ps:默认设计图上最小的那个弹窗的宽高，具体如果要用其他尺寸，请自行在使用页面设置  */
+.vis-dialog-com {
+  min-height: 16.2vh;
+  min-width: 324px;
+  width: max-content;
+  background: rgba(7, 42, 78, 0.84);
+  border: 1px solid rgba(68, 89, 117, 0.6);
+  box-shadow: 0 0 11px 0 rgba(47, 122, 220, 0.20) inset;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+
+  .el-dialog__header {
+    margin-right: 0;
+    padding: 0;
+    height: 54px;
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .el-dialog__title {
+      font-size: 20px;
+      font-family: AlibabaPuHuiTi_2_75_SemiBold;
+      color: #FFFFF4;
+      background: linear-gradient(180deg, #FFFFFF 0%, #6BCEFF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 3px;
+      display: flex;
+      align-items: center;
+
+      &::before {
+        margin: 0 6px;
+        content: '';
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background: url('../assets/img/vis/dialog-con-title-icon.png') no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 2px;
+      background: url('../assets/img/vis/dialog-con-title-bottom-line.png') no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  .el-dialog__headerbtn {
+    width: max-content;
+    height: 54px;
+    top: 0;
+
+    .el-dialog__close {
+      font-size: 16px;
+      color: #FFFFF4;
+    }
+  }
+
+  .el-dialog__body {
+    padding: 0;
+    flex: 1;
+    font-size: 16px;
+    font-family: AlibabaPuHuiTi_2_55_Regular;
+    color: #FFFFF4;
+  }
+
+  // 弹窗返回按钮样式
+  .vis-dialog-btn {
+    min-width: 80px;
+    max-width: max-content;
+    padding: 0 22px;
+    height: 40px;
+    background: url('../assets/img/vis/dialog-btn-bg.png') no-repeat;
+    background-size: 100% 100%;
+    font-size: 18px;
+    font-family: AlibabaPuHuiTi_2_65_Medium;
+    color: #FFFFF4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
+
+//// 大屏提示框公共样式
+//.vis-com-message {
+//  top: 90px !important;
+//  min-width: 459px !important;
+//  height: 38px !important;
+//  border-radius: 2px 2px 2px 2px;
+//  opacity: 1;
+//
+//  .el-message__content {
+//    // padding-left: 20px;
+//    font-size: 16px !important;
+//    font-family: AlibabaPuHuiTi_2_55_Regular !important;
+//    font-weight: 400 !important;
+//    -webkit-background-clip: text !important;
+//  }
+//}
